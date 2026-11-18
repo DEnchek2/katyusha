@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Мы вместе ♥</title>
+  <meta name="theme-color" content="#f7d3dd">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'%3E%3Cpath fill='%23d4102a' d='M50 88C50 88 3 58 3 28C3 12 15 2 28 2C38 2 46 8 50 16C54 8 62 2 72 2C85 2 97 12 97 28C97 58 50 88 50 88Z'/%3E%3C/svg%3E">
+
+  <!-- Шрифты Google Fonts (все поддерживают кириллицу) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Marck+Script&family=Montserrat:wght@500;700;800;900&family=Oswald:wght@500;700&family=PT+Mono&family=PT+Serif:wght@700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Блёстки на фоне (создаются в script.js) -->
+<div class="bg-sparkles" id="bgSparkles" aria-hidden="true"></div>
+
+<main class="stage" id="stage">
+
+  <div class="album" id="album">
+    <!-- Задняя обложка и торец со стопкой страниц -->
+    <div class="album-base" aria-hidden="true"></div>
+
+    <div class="book" id="book">
+
+      <!-- ===================================================== -->
+      <!-- ОБЛОЖКА                                                -->
+      <!-- ===================================================== -->
+      <section class="leaf" aria-label="Обложка">
+        <div class="face front page page-cover">
+          <div class="cover-stitch" aria-hidden="true"></div>
+
+          <!-- Надпись стразами. Текст меняется в атрибуте data-gems -->
+          <div class="gem-text gem-title" data-gems="МЫ ВМЕСТЕ" data-palette="crystal" role="img" aria-label="Мы вместе"></div>
+
+          <!-- Атласный бант (SVG) с биркой -->
+          <div class="bow-wrap">
+            <svg class="bow" viewBox="0 0 400 300" aria-hidden="true">
+              <defs>
+                <linearGradient id="bowSatinL" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#8a0517"/>
+                  <stop offset=".34" stop-color="#cf132d"/>
+                  <stop offset=".5" stop-color="#ff5d70"/>
+                  <stop offset=".63" stop-color="#d1152f"/>
+                  <stop offset="1" stop-color="#76030f"/>
+                </linearGradient>
+                <linearGradient id="bowSatinR" x1="1" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#8a0517"/>
+                  <stop offset=".34" stop-color="#cf132d"/>
+                  <stop offset=".5" stop-color="#ff5d70"/>
+                  <stop offset=".63" stop-color="#d1152f"/>
+                  <stop offset="1" stop-color="#76030f"/>
+                </linearGradient>
+                <linearGradient id="bowTail" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#a50c22"/>
+                  <stop offset=".45" stop-color="#e5283e"/>
+                  <stop offset=".6" stop-color="#c3112a"/>
+                  <stop offset="1" stop-color="#7b0414"/>
+                </linearGradient>
+                <radialGradient id="bowKnot" cx=".38" cy=".32" r=".75">
+                  <stop offset="0" stop-color="#ff7384"/>
+                  <stop offset=".45" stop-color="#d71a33"/>
+                  <stop offset="1" stop-color="#7d0415"/>
+                </radialGradient>
+              </defs>
+              <!-- хвостики -->
+              <path d="M188 130 C171 170 146 214 113 262 L139 255 L146 283 C171 232 193 182 207 136 Z" fill="url(#bowTail)"/>
+              <path d="M212 130 C229 170 254 214 287 262 L261 255 L254 283 C229 232 207 182 193 136 Z" fill="url(#bowTail)"/>
+              <path d="M196 140 C184 180 165 222 143 262" stroke="#ff8b98" stroke-opacity=".45" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M204 140 C216 180 235 222 257 262" stroke="#ff8b98" stroke-opacity=".35" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- петли -->
+              <path d="M190 110 C160 78 118 36 76 47 C36 58 34 116 60 143 C83 167 143 151 190 132 Z" fill="url(#bowSatinL)"/>
+              <path d="M210 110 C240 78 282 36 324 47 C364 58 366 116 340 143 C317 167 257 151 210 132 Z" fill="url(#bowSatinR)"/>
+              <!-- тень внутри петель -->
+              <path d="M186 116 C160 99 121 80 98 95 C83 106 92 127 113 133 C139 139 166 131 186 126 Z" fill="#5e010f" opacity=".5"/>
+              <path d="M214 116 C240 99 279 80 302 95 C317 106 308 127 287 133 C261 139 234 131 214 126 Z" fill="#5e010f" opacity=".5"/>
+              <!-- блики атласа -->
+              <path d="M178 99 C152 72 114 50 82 59" stroke="#ffd3d9" stroke-opacity=".6" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M222 99 C248 72 286 50 318 59" stroke="#ffd3d9" stroke-opacity=".45" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M66 136 C90 156 140 146 176 132" stroke="#ff7d8c" stroke-opacity=".35" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- узелок -->
+              <rect x="180" y="99" width="40" height="46" rx="14" fill="url(#bowKnot)"/>
+              <path d="M187 108 C195 103 206 103 213 108" stroke="#ffc0c8" stroke-opacity=".7" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M186 136 C195 141 206 141 214 136" stroke="#5e010f" stroke-opacity=".35" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- верёвочка к бирке -->
+              <path d="M207 141 C 213 186, 238 214, 262 228" fill="none" stroke="#c49a5e" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+            <!-- Бирка (текст можно поменять) -->
+            <div class="tag"><span>Сделано<br>с любовью</span></div>
+          </div>
+
+          <!-- Дата стразами -->
+          <div class="gem-text gem-date" data-gems="21.02.26" data-palette="ruby" role="img" aria-label="21.02.26"></div>
+
+          <button class="btn-open" data-go="1">
+            <svg viewBox="0 0 100 90" aria-hidden="true"><use href="#heartShape"/></svg>
+            Открыть альбом
+          </button>
+        </div>
+        <div class="face back back-pink" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- СТРАНИЦА 1 — СЧЁТЧИК                                   -->
+      <!-- Большая цифра, слово и список считаются сами от START_DATE -->
+      <!-- (script.js): сейчас это месяцы, а после 21.02.2027 — годы. -->
+      <!-- ===================================================== -->
+      <section class="leaf" aria-label="Страница 1">
+        <div class="face front page page-year">
+          <span class="tape tape-pink" style="top:2.5cqw; right:8cqw; rotate:6deg"></span>
+
+          <div class="year-top">
+            <div class="big-one" id="bigNum" data-text="0"><span>0</span></div>
+            <div class="year-list">
+              <h2 class="year-title" id="bigWord"></h2>
+              <p class="year-sub">а это уже:</p>
+              <ul id="totals"></ul>
+            </div>
+          </div>
+
+          <!-- Живой таймер (заполняется в script.js) -->
+          <div class="timer-card">
+            <span class="tape tape-white" style="top:-2.4cqw; left:50%; translate:-50% 0; rotate:-3deg"></span>
+            <div class="timer-label" id="timerLabel">Мы вместе:</div>
+            <div class="timer" id="timer" aria-live="off"></div>
+            <div class="timer-total" id="timerTotal"></div>
+          </div>
+        </div>
+        <div class="face back" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- СТРАНИЦА 2 — МИНИ-МЫ                                   -->
+      <!-- ===================================================== -->
+      <section class="leaf" aria-label="Страница 2">
+        <div class="face front page page-mini">
+          <p class="mini-caption">наша формула любви</p>
+
+          <div class="mini-grid">
+            <div class="mini-left">
+              <figure class="mini-item">
+                <figcaption class="label-sticker">МИНИ ТЫ</figcaption>
+                <div class="heart-photo">
+                  <!-- ФОТО: маленькая она -->
+                  <img class="photo" src="photos/mini-ty.jpg" alt="Маленькая ты" loading="lazy" decoding="async">
+                  <svg class="heart-dots" viewBox="0 0 100 90" aria-hidden="true"><use href="#heartShape" transform="translate(50 45) scale(1.14) translate(-50 -45)"/></svg>
+                </div>
+              </figure>
+
+              <div class="math-sign">+</div>
+
+              <figure class="mini-item">
+                <figcaption class="label-sticker label-alt">МИНИ Я</figcaption>
+                <div class="heart-photo">
+                  <!-- ФОТО: маленький я -->
+                  <img class="photo" src="photos/mini-ya.jpg" alt="Маленький я" loading="lazy" decoding="async">
+                  <svg class="heart-dots" viewBox="0 0 100 90" aria-hidden="true"><use href="#heartShape" transform="translate(50 45) scale(1.14) translate(-50 -45)"/></svg>
+                </div>
+              </figure>
+            </div>
+
+            <div class="math-sign math-eq">=</div>
+
+            <div class="mini-right">
+              <h2 class="we-title" data-text="МЫ"><span>МЫ</span></h2>
+              <div class="dotted-frame">
+                <!-- ФОТО: мы вместе -->
+                <img class="photo" src="photos/my.jpg" alt="Мы" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="face back" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- СТРАНИЦА 3 — КАРТА                                     -->
+      <!-- ===================================================== -->
+      <section class="leaf" aria-label="Страница 3">
+        <div class="face front page page-map">
+          <!-- Винтажная карта мира рисуется в script.js -->
+          <div class="map" id="vintageMap" aria-hidden="true"></div>
+
+          <div class="stickers">
+            <span class="sticker" style="--r:-4deg; --x:-6cqw">одна планета,</span>
+            <span class="sticker" style="--r:3deg;  --x:7cqw">196 стран,</span>
+            <span class="sticker" style="--r:-2deg; --x:-3cqw">7 млрд человек,</span>
+            <span class="sticker" style="--r:2.5deg; --x:4cqw">но лучшим из всех</span>
+            <span class="sticker sticker-big" style="--r:-3deg; --x:0cqw">являешься <b>Ты</b></span>
+          </div>
+        </div>
+        <div class="face back" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- СТРАНИЦА 4 — КОЛЛАЖ I LOVE YOU                         -->
+      <!-- ===================================================== -->
+      <section class="leaf" aria-label="Страница 4">
+        <div class="face front page page-collage">
+          <!-- ФОТО для коллажа: 15 штук (3 колонки × 5 рядов) -->
+          <div class="collage">
+            <img class="photo" src="photos/collage-01.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-02.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-03.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-04.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-05.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-06.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-07.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-08.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-09.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-10.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-11.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-12.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-13.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-14.jpg" alt="" loading="lazy" decoding="async">
+            <img class="photo" src="photos/collage-15.jpg" alt="" loading="lazy" decoding="async">
+          </div>
+
+          <!-- Каждая строка — отдельная строчка надписи -->
+          <h2 class="ily" id="ily" data-lines="I|LOVE|YOU" aria-label="I love you"></h2>
+
+          <span class="collage-hint">нажми на фото ♥</span>
+        </div>
+        <div class="face back" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- СТРАНИЦА 5 — 100 ПРИЧИН                                -->
+      <!-- ===================================================== -->
+      <section class="leaf" aria-label="Страница 5">
+        <div class="face front page page-reasons">
+          <h2 class="reasons-title">
+            <span class="r-num">100</span>
+            <span class="r-text">причин, почему<br>я люблю тебя</span>
+          </h2>
+          <!-- Сердечки создаются в script.js из массива REASONS -->
+          <div class="hearts-grid" id="heartsGrid"></div>
+          <p class="hint">нажимай на сердечки — их больше, чем кажется</p>
+        </div>
+        <div class="face back" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- СТРАНИЦА 6 — КОНВЕРТИКИ                                -->
+      <!-- ===================================================== -->
+      <section class="leaf" aria-label="Страница 6">
+        <div class="face front page page-letters">
+          <h2 class="letters-title">Письма <span>для тебя</span></h2>
+          <p class="letters-sub">открой, когда…</p>
+          <!-- Конверты создаются в script.js из массива LETTERS -->
+          <div class="envelopes" id="envelopes"></div>
+          <p class="ps-note">P.S. я очень тебя люблю ♥</p>
+        </div>
+        <div class="face back" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- СТРАНИЦА 7 — ПОЦЕЛУИ И ФОТО                            -->
+      <!-- ===================================================== -->
+      <section class="leaf" aria-label="Страница 7">
+        <div class="face front page page-kiss">
+          <div class="kiss-top">
+            <div class="heart-photo heart-sticker kiss-heart">
+              <!-- ФОТО: мы в сердечке -->
+              <img class="photo" src="photos/kiss.jpg" alt="Мы" loading="lazy" decoding="async">
+            </div>
+            <!-- Летающие поцелуйчики -->
+            <svg class="lip" style="--x:2%;  --y:6%;  --r:-18deg; --s:1;   --d:0s"><use href="#lips"/></svg>
+            <svg class="lip" style="--x:76%; --y:2%;  --r:16deg;  --s:1.1; --d:.6s"><use href="#lips"/></svg>
+            <svg class="lip" style="--x:84%; --y:44%; --r:-10deg; --s:.8;  --d:1.2s"><use href="#lips"/></svg>
+            <svg class="lip" style="--x:0%;  --y:52%; --r:12deg;  --s:.9;  --d:.3s"><use href="#lips"/></svg>
+            <svg class="lip" style="--x:14%; --y:82%; --r:-24deg; --s:.7;  --d:1.5s"><use href="#lips"/></svg>
+            <svg class="lip" style="--x:72%; --y:80%; --r:22deg;  --s:.75; --d:.9s"><use href="#lips"/></svg>
+            <svg class="lip" style="--x:44%; --y:-4%; --r:4deg;   --s:.6;  --d:1.8s"><use href="#lips"/></svg>
+          </div>
+
+          <p class="kiss-caption">миллион поцелуев для тебя</p>
+
+          <!-- ФОТО: 6 квадратных фото -->
+          <div class="squares">
+            <div class="sq" style="--r:-3deg"><img class="photo" src="photos/square-1.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="sq" style="--r:2deg"><img class="photo" src="photos/square-2.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="sq" style="--r:-1.5deg"><img class="photo" src="photos/square-3.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="sq" style="--r:2.5deg"><img class="photo" src="photos/square-4.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="sq" style="--r:-2deg"><img class="photo" src="photos/square-5.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="sq" style="--r:3deg"><img class="photo" src="photos/square-6.jpg" alt="" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+        <div class="face back" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- СТРАНИЦА 8 — ГЛАЗА                                     -->
+      <!-- ===================================================== -->
+      <section class="leaf" aria-label="Страница 8">
+        <div class="face front page page-eyes">
+          <div class="eye eye-1">
+            <!-- ФОТО: твой голубой глаз -->
+            <img class="photo" src="photos/eye-blue.jpg" alt="Твой глаз" loading="lazy" decoding="async">
+          </div>
+
+          <!-- Надпись «из газет». Строки разделяются символом | -->
+          <h2 class="ransom" id="ransom" data-lines="ВЕСЬ МОЙ МИР|В ТВОИХ|ГЛАЗАХ" aria-label="Весь мой мир в твоих глазах"></h2>
+
+          <div class="eye eye-2">
+            <!-- ФОТО: мой зелёный глаз -->
+            <img class="photo" src="photos/eye-moy.jpg" alt="Мой глаз" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="face back" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- СТРАНИЦА 9 — КОНЕЦ                                     -->
+      <!-- ===================================================== -->
+      <section class="leaf" aria-label="Страница 9">
+        <div class="face front page page-end" id="pageEnd">
+          <h2 class="end-title">
+            <span class="end-1">КОНЕЦ АЛЬБОМА,</span>
+            <span class="end-2">но не конец</span>
+            <span class="end-3">НАШЕЙ ИСТОРИИ</span>
+          </h2>
+
+          <figure class="polaroid">
+            <span class="tape tape-pink" style="top:-2.6cqw; left:-4cqw; rotate:-38deg"></span>
+            <span class="tape tape-pink" style="top:-2.6cqw; right:-4cqw; rotate:38deg"></span>
+            <!-- ФОТО: полароид -->
+            <img class="photo" src="photos/polaroid.jpg" alt="Мы" loading="lazy" decoding="async">
+            <figcaption>продолжение следует…</figcaption>
+          </figure>
+
+          <button class="btn-restart" data-go="0">↺ листать сначала</button>
+        </div>
+        <div class="face back" aria-hidden="true"></div>
+      </section>
+
+    </div><!-- /.book -->
+
+    <!-- Пружина: кольца создаются в script.js -->
+    <div class="rings" id="rings" aria-hidden="true"></div>
+  </div><!-- /.album -->
+
+  <!-- Навигация внизу экрана -->
+  <nav class="nav" aria-label="Перелистывание">
+    <button class="nav-btn" id="prevBtn" aria-label="Назад">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="dots" id="dots"></div>
+    <button class="nav-btn" id="nextBtn" aria-label="Вперёд">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </nav>
+</main>
+
+<!-- Просмотр фото на весь экран -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="modal-close" id="lightboxClose" aria-label="Закрыть">×</button>
+  <img id="lightboxImg" alt="">
+</div>
+
+<!-- Письмо из конверта -->
+<div class="letter-modal" id="letterModal" aria-hidden="true">
+  <div class="letter-paper" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+    <button class="modal-close" id="letterClose" aria-label="Закрыть">×</button>
+    <h3 id="letterTitle"></h3>
+    <p id="letterText"></p>
+    <p class="letter-sign">Твой ♥</p>
+  </div>
+</div>
+
+<!-- Общие SVG-фигуры: сердечко, губы, градиенты страз -->
+<svg class="svg-defs" width="0" height="0" aria-hidden="true">
+  <defs>
+    <path id="heartShape" d="M50 88C50 88 3 58 3 28C3 12 15 2 28 2C38 2 46 8 50 16C54 8 62 2 72 2C85 2 97 12 97 28C97 58 50 88 50 88Z"/>
+
+    <symbol id="lips" viewBox="0 0 100 60">
+      <path fill="currentColor" d="M3 29C12 17 25 8 37 10C43 11 47 15 50 18C53 15 57 11 63 10C75 8 88 17 97 29C83 28 66 29 50 31C34 29 17 28 3 29Z"/>
+      <path fill="currentColor" d="M4 32C19 32 34 34 50 35C66 34 81 32 96 32C87 47 70 57 50 57C30 57 13 47 4 32Z"/>
+      <g fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="1.2" stroke-linecap="round">
+        <path d="M30 39 28 50M40 40 39 53M50 41v13M60 40l1 13M70 39l2 11M34 14l2 11M66 14l-2 11M23 18l4 9M77 18l-4 9"/>
+      </g>
+      <path d="M9 30.5C24 31 38 33 50 33c12 0 26-2 41-2.5" fill="none" stroke="#5e010f" stroke-opacity=".35" stroke-width="1.4"/>
+    </symbol>
+
+    <!-- Градиенты для страз -->
+    <radialGradient id="gemCrystal" cx=".5" cy=".5" r=".5" fx=".34" fy=".3">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".28" stop-color="#f1eef6"/>
+      <stop offset=".6" stop-color="#a9a3b8"/>
+      <stop offset=".84" stop-color="#e4e0ee"/>
+      <stop offset="1" stop-color="#6c6779"/>
+    </radialGradient>
+    <radialGradient id="gemPink" cx=".5" cy=".5" r=".5" fx=".34" fy=".3">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".28" stop-color="#ffe6ee"/>
+      <stop offset=".6" stop-color="#e59ab1"/>
+      <stop offset=".84" stop-color="#fbd3df"/>
+      <stop offset="1" stop-color="#94506a"/>
+    </radialGradient>
+    <radialGradient id="gemIris" cx=".5" cy=".5" r=".5" fx=".34" fy=".3">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".28" stop-color="#e9f4ff"/>
+      <stop offset=".6" stop-color="#b3b5e0"/>
+      <stop offset=".84" stop-color="#f6dcf2"/>
+      <stop offset="1" stop-color="#776d92"/>
+    </radialGradient>
+    <radialGradient id="gemRuby" cx=".5" cy=".5" r=".5" fx=".34" fy=".3">
+      <stop offset="0" stop-color="#fff1f1"/>
+      <stop offset=".22" stop-color="#ff7d8a"/>
+      <stop offset=".56" stop-color="#cf0f2a"/>
+      <stop offset=".84" stop-color="#ff4b5e"/>
+      <stop offset="1" stop-color="#650010"/>
+    </radialGradient>
+    <radialGradient id="gemRuby2" cx=".5" cy=".5" r=".5" fx=".34" fy=".3">
+      <stop offset="0" stop-color="#ffe2e2"/>
+      <stop offset=".25" stop-color="#ff5b6b"/>
+      <stop offset=".6" stop-color="#b0001f"/>
+      <stop offset=".85" stop-color="#e8283e"/>
+      <stop offset="1" stop-color="#55000b"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>
